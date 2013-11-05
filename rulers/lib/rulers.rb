@@ -4,6 +4,7 @@ require "rulers/routing"
 require "rulers/util"
 require "rulers/dependencies"
 require "rulers/controller"
+require "rulers/file_model"
 
 module Rulers
   class Application
@@ -11,6 +12,10 @@ module Rulers
       if env['PATH_INFO'] == 'favicon.ico'
         return [404,
           {'Content-Type' => 'text/html'}, []]
+      end
+      if env['PATH_INFO'] == '/'
+        return [302,
+        {"Location" => "/home/index"}, []]
       end
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
