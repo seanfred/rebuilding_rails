@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rulers/version'
 
 Gem::Specification.new do |s|
-  s.name          = "rulers"
+  s.name          = "rulers_seanfred"
   s.version       = Rulers::VERSION
   s.authors       = ["seanfred"]
   s.email         = ["sean.frederick.1@gmail.com"]

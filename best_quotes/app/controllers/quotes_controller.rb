@@ -12,8 +12,7 @@ class QuotesController < Rulers::Controller
   def new_quote
         attrs = {
           "submitter"=> "web user",
-          "quote"=> "A picture is worth a thousand
-          pixels",
+          "quote"=> "A picture is worth a thousand pixels",
           "attribution"=> "Me"
         }
         m = FileModel.create attrs
