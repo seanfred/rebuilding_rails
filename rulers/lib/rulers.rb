@@ -15,7 +15,7 @@ module Rulers
           end
       if env['PATH_INFO'] == '/'
         return [302,
-        {"Location" => "/home/index"}, []]
+        {"Location" => "/quotes/index"}, []]
       end
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
