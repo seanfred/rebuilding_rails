@@ -23,5 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rack-test"
   s.add_runtime_dependency "erubis"
   s.add_runtime_dependency "multi_json"
+  s.add_runtime_dependency "sqlite3"
 
 end
