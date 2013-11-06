@@ -1,12 +1,14 @@
 class QuotesController < Rulers::Controller
   def quote_1
     quote_1 = Rulers::Model::FileModel.find(1)
-    render :quote, :obj => quote_1
+    ua = request.user_agent
+    render :quote, :obj => quote_1, :ua => ua
   end
 
   def index
         quotes = FileModel.all
-        render :index, :quotes => quotes
+        ua = request.user_agent
+        render :index, :quotes => quotes, :ua => ua
   end
 
   def new_quote
@@ -16,7 +18,8 @@ class QuotesController < Rulers::Controller
           "attribution"=> "Me"
         }
         m = FileModel.create attrs
-        render :quote, :obj => m
+        ua = request.user_agent
+        render :quote, :obj => m, :ua => ua
   end
 
   def show
