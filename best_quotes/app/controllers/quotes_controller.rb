@@ -11,12 +11,18 @@ class QuotesController < Rulers::Controller
 
   def new_quote
         attrs = {
-          "submitter"=> "web user",
+          "submitter"=> "Sean",
           "quote"=> "A picture is worth a thousand pixels",
           "attribution"=> "Me"
         }
         m = FileModel.create attrs
         render :quote, :obj => m
+  end
+
+  def show
+        quote = FileModel.find(params["id"])
+        ua = request.user_agent
+        render_response :quote, :obj => quote, :ua => ua
   end
 
   def update
